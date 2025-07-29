@@ -2,11 +2,11 @@
   "name": "hungie-api",
   "build": {
     "commands": [
-      "pip install -r requirements-prod.txt"
+      "pip3 install -r requirements-prod.txt"
     ]
   },
   "start": {
-    "command": "python prod_server.py"
+    "command": "python3 prod_server.py"
   },
   "env": {
     "ENVIRONMENT": "production",
