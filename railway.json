@@ -1,0 +1,15 @@
+{
+  "name": "hungie-api",
+  "build": {
+    "commands": [
+      "pip install -r requirements-prod.txt"
+    ]
+  },
+  "start": {
+    "command": "python prod_server.py"
+  },
+  "env": {
+    "ENVIRONMENT": "production",
+    "PORT": "$PORT"
+  }
+}
