@@ -1,1 +1,1 @@
-web: python3 prod_server.py
+web: python3 main.py
