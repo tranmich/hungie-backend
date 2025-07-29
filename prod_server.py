@@ -30,11 +30,6 @@ app = FastAPI(
     redoc_url="/redoc" if ENVIRONMENT == "development" else None
 )
 
-# IMMEDIATE health endpoint before any middleware
-@app.get("/health")
-def health():
-    return {"status": "ok", "healthy": True}
-
 # CORS configuration for production
 if ENVIRONMENT == "production":
     # Production CORS - restrict to your domain
@@ -188,7 +183,7 @@ def get_recipe(recipe_id: str):
             FROM recipe_ingredients ri
             JOIN ingredients i ON ri.ingredient_id = i.id
             WHERE ri.recipe_id = ?
-            ORDER BY ri.id
+            ORDER BY i.name
         """, (recipe_id,))
         
         recipe['ingredients'] = [dict(row) for row in cursor.fetchall()]
